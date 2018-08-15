@@ -1,0 +1,27 @@
+<h1>Listing books</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Title</th>
+			<th scope="col">Summary</th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @books.each do |book| %>
+		<tr>
+			<td><%= book.title %></td>
+			<td><%= book.summary %></td>
+			<td><%= link_to 'Show',book_path(book) %></td>
+			<td><%= link_to 'Edit', edit_book_path(book) %></td>
+			<td><%= link_to 'Destroy', book_path(book),
+			method: :delete,
+			data: { confirm: 'Are you sure ?'} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<%= link_to 'New book', new_book_path %>
