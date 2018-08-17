@@ -1,9 +1,19 @@
 <p>
-  <strong>Title:</strong>
-  <%= @book.title %>
+	<strong>Title:</strong>
+	<%= @book.title %>
 </p>
- 
+
 <p>
-  <strong>Summary:</strong>
-  <%= @book.summary %>
+	<strong>Summary:</strong>
+	<%= @book.summary %>
 </p>
+
+<h2>Reviews</h2>
+<%= render @book.reviews %>
+
+<h2>Add a review : </h2>
+<%= render 'reviews/form' %>
+
+
+<%=link_to 'Edit', edit_book_path(@book) %>
+<%=link_to 'Back', books_path %>
